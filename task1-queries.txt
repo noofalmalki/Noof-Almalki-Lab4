@@ -1,0 +1,53 @@
+
+13 ?- house = house.
+true.
+
+Explanation:** Both atoms are identical.
+
+14 ?- house = abc.
+false.
+
+**Explanation:** The atoms are different.
+
+15 ?- edge(a,b) = edge(C,b).
+C = a.
+
+Explanation:** C unifies with a.
+
+16 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+Explanation:** C matches a, and B matches d.
+
+17 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+Explanation:** Both variables match the corresponding atoms.
+
+18 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+
+Explanation:** A matches a, and B matches f(g,h).
+
+19 ?- edge(A,A) = edge(b,c).
+false.
+
+Explanation:** A cannot match two different values.
+
+20 ?- edge(A,A) = edge(b,b).
+A = b.
+
+Explanation:** Both occurrences of A match b.
+
+21 ?- A = B, B = f.
+A = B, B = f.
+
+Explanation:** A and B are unified, and both have the value f.
+
+22 ?- A = B, B = f, A = e.
+false.
+
+Explanation:** A cannot be both f and e.
